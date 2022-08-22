@@ -8,10 +8,10 @@ Database schema is located here: [/resources/db_schema.png](/resources/db_schema
 These instructions assume Postgres v 14.4 or later is installed.
 
 First create the wings database from the command line by typing:
-`createdb wings`
+`createdb img_gallery`
 
 Then connect to the newly created db:
-`psql -d wings`
+`psql -d img_gallery`
 
 You should get some output that looks like this:
 
@@ -19,11 +19,11 @@ You should get some output that looks like this:
 psql (14.4)
 Type "help" for help.
 
-wings=#
+img_gallery=#
 ```
 
-At the psql prompt create a user called 'wings' by entering:
-`CREATE USER wings;`
+At the psql prompt create a user called 'img_gallery' by entering:
+`CREATE USER img_gallery;`
 
 If you get this message, then your user has been set up successfully:
 `CREATE ROLE`
