@@ -1,7 +1,9 @@
-require("dotenv").config();
+require("dotenv").config({
+  path: ".env",
+});
 
 module.exports = {
-  development: {
+  // development: {
     client: "pg",
     connection: {
       database: process.env.PG_DATABASE,
@@ -12,19 +14,19 @@ module.exports = {
       directory: "./db/migrations",
     },
     seeds: { directory: "./db/seeds" },
-  },
+  };
 
-  production: {
-    client: "pg",
-    connection: {
-      connectionString: process.env.DATABASE_URL, // heroku addons
-      ssl: { rejectUnauthorized: false },
-    },
-    migrations: {
-      directory: "./db/migrations",
-    },
-    seeds: {
-      directory: "./db/seeds",
-    },
-  },
-};
+  // production: {
+  //   client: "pg",
+  //   connection: {
+  //     connectionString: process.env.DATABASE_URL, // heroku addons
+  //     ssl: { rejectUnauthorized: false },
+  //   },
+  //   migrations: {
+  //     directory: "./db/migrations",
+  //   },
+  //   seeds: {
+  //     directory: "./db/seeds",
+  //   },
+  // },
+  //};
