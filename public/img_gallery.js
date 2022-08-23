@@ -18,7 +18,22 @@ async function showGallery() {
       return data.json();
     })
     .then((data) => {
-     // Build the grid of thumbnails;
+      // Display DALL-E Explanation
+      const pIntro = document.createElement("p");
+      pIntro.className = "metadata";
+      const lblIntro = document.createElement("span");
+      lblIntro.className = "label";
+      lblIntro.innerText = "What is DALL-E 2?";
+      const br = document.createElement("br");
+
+      const txtIntro = document.createElement("span");
+      txtIntro.className = "data";
+      txtIntro.innerText = "DALL-E, a project from OpenAI, is a an AI trained on a vast trove of image data. It generates images based on a simple user-provided text prompt. The images below were all created with DALL-E.";
+      pIntro.append(lblIntro);
+      pIntro.append(br);
+      pIntro.append(txtIntro);
+      
+      // Build the grid of thumbnails;
       const gridContainer = document.createElement("div");
       gridContainer.className = "grid_container";
       for (const item of data) {
@@ -34,6 +49,7 @@ async function showGallery() {
         gridContainer.append(gridItem);
       }
       const container = document.querySelector("#img_container");
+      container.append(pIntro);
       container.append(gridContainer);
     })
     .catch(err => console.error(err));
@@ -72,7 +88,7 @@ async function showPicture() {
       pDesc.append(lblDesc);
       pDesc.append(txtDesc);
 
-      // Video or Image + HD URL
+      // Image
       const imgPicture = document.createElement("img");
       imgPicture.className = "image";
       imgPicture.src = IMAGES_FOLDER + data.fileName;

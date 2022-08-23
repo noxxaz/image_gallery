@@ -101,6 +101,7 @@ span.data {
   color: #666;
 }
 .grid_container {
+  padding-top: 25px;
   display: grid;
   grid-template-columns: 200px 200px 200px;
   gap: 10px;
@@ -111,4 +112,7 @@ span.data {
 img.thumbnail {
   width: 200px;
   height: auto;
+}
+img.image {
+  margin-top: 25px;
 }
