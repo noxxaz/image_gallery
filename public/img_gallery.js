@@ -94,10 +94,35 @@ async function showPicture() {
       imgPicture.src = IMAGES_FOLDER + data.fileName;
       console.log(imgPicture.src);
 
+      // Build a Navigation Bar
+      const backLink = document.createElement("a");
+      backLink.className = "navLink";
+      if(data.imageId > 0) {
+        backLink.href = `index.html?id=${data.imageId - 1}`;
+      } else {
+        backLink.href = "#";
+      }
+      backLink.innerText = "← PREVIOUS IMAGE";
+      const homeLink = document.createElement("a");
+      homeLink.className = "navLink";
+      homeLink.href = "index.html";
+      homeLink.innerText = "BACK TO GALLERY";
+      const nextLink = document.createElement("a");
+      nextLink.href = `index.html?id=${Number(data.imageId) + 1}`;
+      nextLink.className = "navLink";
+      nextLink.innerText = "NEXT IMAGE →"
+      const navBar = document.createElement("footer");
+      navBar.append(backLink);
+      navBar.append(" | ");
+      navBar.append(homeLink);
+      navBar.append(" | ");
+      navBar.append(nextLink);
+
       const container = document.querySelector("#img_container");
       container.append(pDate);
       container.append(pDesc);
       container.append(imgPicture);   
+      document.body.append(navBar);
 
     })
     .catch(err => console.error(err));

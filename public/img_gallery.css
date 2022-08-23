@@ -116,3 +116,34 @@ img.thumbnail {
 img.image {
   margin-top: 25px;
 }
+footer {
+  left: 0;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  text-align: center;
+  margin: auto;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(00, 00, 00, .65);
+}
+a:link {
+  color: #FFF;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #FFF;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: #FFF;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
