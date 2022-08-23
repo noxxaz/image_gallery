@@ -1,17 +1,19 @@
 # image_gallery
 Simple image gallery web page to showcase images created with OpenAI's DALL-E2.
 
-## Database Setup
+## Setup
 
-Database schema is located here: [/resources/db_schema.png](/resources/db_schema.png)
+Run `$ npm install` to install dependencies.
+
+## Database Setup
 
 These instructions assume Postgres v 14.4 or later is installed.
 
-First create the wings database from the command line by typing:
-`createdb img_gallery`
+First create the img_gallery database from the command line by typing:
+`$ createdb img_gallery`
 
 Then connect to the newly created db:
-`psql -d img_gallery`
+`$ psql -d img_gallery`
 
 You should get some output that looks like this:
 
@@ -28,6 +30,5 @@ At the psql prompt create a user called 'img_gallery' by entering:
 If you get this message, then your user has been set up successfully:
 `CREATE ROLE`
 
-Now that your database is set up, run `npm run migrate-latest` to create the tables,
-and `npm run seed-data` to populate seed data. The seed scripts can be run over and over to restore to the original seed data. If however, you need to re-run the migration, run the following command.
+Now that your database is set up, run `$ knex migrate:latest`  to create the tables, and `$ knex seed:run` to populate the database.
 
