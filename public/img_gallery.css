@@ -115,6 +115,7 @@ img.thumbnail {
 }
 img.image {
   margin-top: 25px;
+  max-width: 50%;
 }
 footer {
   left: 0;
