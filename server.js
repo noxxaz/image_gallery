@@ -42,7 +42,7 @@ const getAll = async function () {
       dateCreated: "date_created",
     })
     .from(IMAGES_TABLE)
-    .limit(10);
+    .limit(50);
   return images;
 };
 
