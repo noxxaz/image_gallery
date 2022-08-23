@@ -103,7 +103,7 @@ span.data {
 .grid_container {
   padding-top: 25px;
   display: grid;
-  grid-template-columns: 200px 200px 200px;
+  grid-template-columns: 200px 200px 200px 200px 200px;
   gap: 10px;
 }
 .grid_item {
